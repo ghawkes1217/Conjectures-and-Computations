@@ -1,5 +1,5 @@
-# Conjectures
-These files contain code which can be used to verify certain conjectures in algebraic combinatorics and one computational proof.  The code as well as the conjectures themselves are the intellectual property of Graham Hawkes. There is no known proof for any of these conjectures and there is no known counter-example to any of them.
+# Conjectures-and-Computations
+These files contain code which can be used to verify certain conjectures (due to myself) in algebraic combinatorics and complete one computational proof. There is no known proof for any of these conjectures and there is no known counter-example to any of them.
 
 <strong>Computer Assisted Proof</strong>
 
