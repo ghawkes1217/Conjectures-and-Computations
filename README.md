@@ -3,7 +3,7 @@ Computational evidence for my various of my conjectures in algebraic combinatori
 
 <strong>Computer Assisted Proof</strong>
 
-The file <strong>qta-ssisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <a href="'https://arxiv.org/pdf/2208.00577.pdf'"><emph>A conjectured formula for the rational qt-Catalan polynomial<\emph></a>.
+The file <strong>qta-ssisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <a href="https://arxiv.org/pdf/2208.00577.pdf"><i>A conjectured formula for the rational qt-Catalan polynomial<\i></a>.
   
   
 <strong>Conjecture 1: On type C Grothendieck functions:</strong>
