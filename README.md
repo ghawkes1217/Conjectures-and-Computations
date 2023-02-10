@@ -3,11 +3,11 @@ Computational evidence for my various of my conjectures in algebraic combinatori
 
 <strong>Computer Assisted Proof</strong>
 
-The file <strong>qt-assisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <a href="https://arxiv.org/pdf/2208.00577.pdf"><i>A conjectured formula for the rational qt-Catalan polynomial</i></a>.
+The file <strong>qt-assisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <a href="https://arxiv.org/pdf/2208.00577.pdf"><i>A conjectured formula for the rational qt-Catalan polynomial</i></a>.  Simply running this file without altering any parameters is sufficient to check the Lemmas.
   
  <strong>Conjecture 1: qt-Catalan Numbers</strong>
 
-The file <strong>qt-conjecture.py()</strong> in the folder qt-catalan carries contains code to check Conjecture 1 of <a href="https://arxiv.org/pdf/2208.00577.pdf"><i>A conjectured formula for the rational qt-Catalan polynomial</i></a> for any pair of relatively prime integers.
+The file <strong>qt-conjecture.py()</strong> in the folder qt-catalan contains code to check Conjecture 1 of <a href="https://arxiv.org/pdf/2208.00577.pdf"><i>A conjectured formula for the rational qt-Catalan polynomial</i></a> for any pair of relatively prime integers.  The function conjecture(r,n) returns True if the conjecture holds for the pair (r,n) and False otherwise and also prints additional data.  The conjecture will NOT hold for non relatively prime numbers in general.
   
   
 <strong>Conjecture 2: On type C Grothendieck functions:</strong>
