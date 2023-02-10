@@ -1,5 +1,5 @@
 # Conjectures-and-Computations
-These files contain code which can be used to verify certain conjectures (due to myself) in algebraic combinatorics and complete one computational proof. There is no known proof for any of these conjectures and there is no known counter-example to any of them.
+These files contain code which can be used to verify certain conjectures (due to myself) in algebraic combinatorics. There is no known proof for any of these conjectures and there is no known counter-example to any of them.  They also include one computational proof.
 
 <strong>Computer Assisted Proof</strong>
 
