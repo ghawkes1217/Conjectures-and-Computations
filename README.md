@@ -3,7 +3,9 @@ Computational evidence for my various of my conjectures in algebraic combinatori
 
 <strong>Computer Assisted Proof</strong>
 
-The file <strong>qta-ssisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <href='https://arxiv.org/pdf/2208.00577.pdf'>  <emph>A conjectured formula for the rational qt-Catalan polynomial<\emph>.  
+The file <strong>qta-ssisted.py()</strong> in the folder qt-catalan carries out the computations needed to complete the proof of Lemma 2 and Lemma 3 of Section 9 of <a href="'https://arxiv.org/pdf/2208.00577.pdf'"><emph>A conjectured formula for the rational qt-Catalan polynomial<\emph></a>.
+  
+  
 <strong>Conjecture 1: On type C Grothendieck functions:</strong>
 
 We conjecture a definition (given within the code) for a type C unimodal tableau such that for any fixed signed permutation there is bijection from the set of Hecke words of a given length, L, to pairs of tableau (P,Q) where P is a type C unimodal tableau corresponding to the signed permutation and Q is a shifted set valued tableau of the same shape as P with entries 1,2,...,L. 
