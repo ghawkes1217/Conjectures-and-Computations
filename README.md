@@ -1,4 +1,12 @@
 # Conjectures-and-Computations
+
+The point of this project is to provide convincing evidence that each of the conjectures covered is "almost certainly"
+true.  Mathematically speaking, a statement only has three possible statuses: proven, disproven, or neither.  In principle, all members of the last category are on equal footing.  For instance, if I conjecture that the number of diagonals of an n-gon is bounded by n, this is on equal footing as the Riemann hypothesis until someone puts forth the 
+counterexample of n=6.  Intuitively, then, there are obvious differences among the set of all statements that have been neither proven nor disproven at the present time.   For one, if the problem has one or more parameters, we can ask for how many fixed settings of these parameters the conjecture has been checked and how representative of the general setting we think these choices of parameters is. 
+
+As a simple example, suppose that Bob has a conjectural statement that applies to each n in the natural numbers.  Further
+suppose that he wishes to convince Alice that his conjecture has a 99% chance of being true for a "randomly" selected natural number. (Of course, we cannot select a random (with uniform probability) natural number. The best we can do is to select a number with probability p<sub>k</sub> for some monotonically decreasing sequence whose series converges (slowly) to 1.)   If Alice selects 999 random numbers and Bob's conjecture holds for each one, then since 0.99<sup>999</sup><0.0001, Alice can be at least 99.99% sure that Bob's claim about the accuracy of his conjecture is correct.
+
 These files contain code which can be used to check (for fixed parameters) some of my conjectures in algebraic combinatorics. There is no known proof (Arroyo, Hamaker, H., and Pan are currently working on a proof for Conjectures 2 and 3) for any of these conjectures and there is no known counter-example to any of them.  (There is also one file containing a computation needed for a proof in a paper of mine).  
 
 
