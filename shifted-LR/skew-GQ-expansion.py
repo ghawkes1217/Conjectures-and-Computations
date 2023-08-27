@@ -282,10 +282,9 @@ def first(w):
 
 def primed_start(Q):
     #change a tableau that has each i or i' first appearing equal to i to one that has the first such equal to i'
-    #note that this does NOT produce any tableaux starting with i' and i in same box
-    #this seems silly but will be useful later
+    #the lattice property should be checked on this version of the tableau
     P=copy.deepcopy(Q)
-    maxi=max(rw(P))
+    maxi=max(read_w(P))
     if maxi%2==0:
         #it should be!!
         for n in range(1,int(maxi/2)+1):
@@ -335,7 +334,7 @@ def forw(P):
 
 
 def latt(P):
-    #Does the tableau P have the lattice property?
+    #Does the tableau P (where P is the version whose first i/i' is an i' (with no i in its box)) have the lattice property?
     counts=[0]*9
     #counts[i] is the is a statistic about the appearances of i and i' as we read the backword and then the forword
     backword=back(P)
