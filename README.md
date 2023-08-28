@@ -45,8 +45,7 @@ In the shifted-LR folder <strong>skew-GQ-expansion.py</strong> tests a conjectur
 
   The function compare(degree,skew,shape,num_vars) returns True if the conjecture is true for the expansion of GQ_{shape/skew} for the given degree and number of variables and False otherwise.  Up to degree 10 or 11 can be checked relatively quickly.
 
-
-    <strong>Conjecture 6: Shifted set-valued skew Littlewood-Richardson coefficients--GP version:</strong>
+<strong>Conjecture 6: Shifted set-valued skew Littlewood-Richardson coefficients--GP version:</strong>
 
 In the shifted-LR folder <strong>skew-GP-expansion.py</strong> tests a similar but slightly simpler conjectural rule for computing the coefficients in the expansion of a skew GP function in terms of (non-skew) GP functions.
  T. Ikeda also claims to have a conjecture for these coefficients but he has not shared with me what it is or how rigorously he has checked it.
