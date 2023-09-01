@@ -81,11 +81,11 @@
 
 
 
-\noindent A short note on skewing GPs and GQs by Graham Hawkes (ghawkes1217@gamil.com)\\
+\noindent A short note on skewing GPs and GQs.  (contact: ghawkes1217@gmail.com)\\
 
 
 
-In this short note we show how to write $\mathbf{GP}_{\lambda/\mu}$ as an non-negative integral sum of $\mathbf{GP}_{\nu}$.  In addition, we show how to write $\mathbf{GQ}_{\lambda/\mu}$ as an non-negative integral sum of $\mathbf{GQ}_{\nu}$.  First, we must define the \emph{backword} and \emph{forword}.  The backword of a (skew) shifted set-valued tableau (for both the P-version and the Q-version) is attained as follows.  Read the entries of the tableau in the following order:
+In this short note we (conjecturally) show how to write $\mathbf{GP}_{\lambda/\mu}$ as an non-negative integral sum of $\mathbf{GP}_{\nu}$.  In addition, we show how to write $\mathbf{GQ}_{\lambda/\mu}$ as an non-negative integral sum of $\mathbf{GQ}_{\nu}$.  First, we must define the \emph{backword} and \emph{forword}.  The backword of a (skew) shifted set-valued tableau (for both the P-version and the Q-version) is attained as follows.  Read the entries of the tableau in the following order:
 
 \begin{enumerate}
 \item Within the tableau start from the top row and work down
@@ -103,7 +103,7 @@ In this short note we show how to write $\mathbf{GP}_{\lambda/\mu}$ as an non-ne
 \end{enumerate}
 
 
-Next, we define what it means for a (skew)-shifted SVT to have the \emph{lattice} property.  To initialize set $lattice=true$. Now for each $i$ perform the following. 
+Next, we define what it means for a (skew)-shifted SVT to have the \emph{lattice} property.  To initialize set $lattice=true$. Now for each $i$ perform the following:
 \begin{itemize}
 \item set $count_i=0=count_{i+1}$
 \item Scan through the backword, whenever you see an $i$ set $count_i=count_i+1$ and whenever you see an $i+1$ set $count_{i+1}=count_{i+1}+1$.  If during this process $count_{i+1}$ ever exceeds $count_i$ set $lattice=false$. Also, if while scanning an $(i+1)'$ when currently $count_i=count_{i+1}$ also set $lattice=false$.
@@ -112,17 +112,19 @@ Next, we define what it means for a (skew)-shifted SVT to have the \emph{lattice
 
 
 
-Finally we defined the \emph{primed-starting} property as follows: Read through the boxes of $P$ by rows, top to botton among rows and left to right within rows.  If the first box you encounter that contains an $i$ or $i'$ (or both) contains an $i'$ but not an $i$ then the tableau has the primed-starting property for $i$. A tableau with the primed starting property for all $i$ is considered to have the primed-starting property.  
+Finally, we define the \emph{primed-starting} property as follows: Read through the boxes of $P$ by rows, top to bottom among rows and left to right within rows.  If the first box you encounter that contains an $i$ or $i'$ (or both) contains an $i'$ but not an $i$ then the tableau has the primed-starting property for $i$. A tableau with the primed-starting property for all $i$ is considered to have the overall primed-starting property.  
 
-Let $\mathcal{P}_{\lambda/\mu}$ denote the set of all shifted set valued $P$-tableau of shape $\lambda/\mu$ that have the lattice property and let $\mathcal{Q}_{\lambda/\mu}$ denote the set of all shifted set valued $Q$-tableau of shape $\lambda/\mu$ that have the lattice property and the primed start property.
+Let $\mathcal{P}_{\lambda/\mu}$ denote the set of all shifted set valued $P$-tableau of shape $\lambda/\mu$ that have the lattice property and let $\mathcal{Q}_{\lambda/\mu}$ denote the set of all shifted set valued $Q$-tableau of shape $\lambda/\mu$ that have the lattice property and the primed-starting property.
 
 Now we can expand $\mathbf{GP}$ and $\mathbf{GQ}$:
 
 \begin{eqnarray*}
-\mathbf{GP}_{\lambda/\mu}=\sum_{P \in \mathcal{P_\lambda/\mu}} GP_{wt(P)}\\
-\mathbf{GQ}_{\lambda/\mu}=\sum_{Q \in \mathcal{Q_\lambda/\mu}} GQ_{wt(Q)}
+\mathbf{GP}_{\lambda/\mu}=\sum_{P \in \mathcal{P_{\lambda/\mu}}} GP_{wt(P)}\\
+\mathbf{GQ}_{\lambda/\mu}=\sum_{Q \in \mathcal{Q_{\lambda/\mu}}} GQ_{wt(Q)}
 \end{eqnarray*}
-We have not proved these statements but they can be checked up to a large order at \href{https://github.com/ghawkes1217/Conjectures-and-Computations}{here}
-
+To check that this is true for specific parameters please see:\\
+P-version: https://github.com/ghawkes1217/Conjectures-and-Computations/blob/main/shifted-LR/skew-GP-expansion.py\\
+Q-version: https://github.com/ghawkes1217/Conjectures-and-Computations/blob/main/shifted-LR/skew-GQ-expansion.py\\
+The ``fact" that these statements are true can be checked up to the degree 10 terms relatively quickly.   
 
 \end{document}
