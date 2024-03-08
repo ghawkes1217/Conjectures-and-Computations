@@ -439,4 +439,148 @@ def compare(degree,skew,shape,num_vars):
     return(M==L)
 
 
-compare(9,[4,1],[7,3,1],4)
+#The following code is for checking a stronger conjecture associated to a certain plactic algebra
+
+def weaks(length,maxnum):
+    degree=length
+    operators=maxnum
+    HW=[[]]
+    while len(HW[0])<degree:
+        hw=[]
+        for i in range(0,len(HW)):
+            hi=HW[i]
+            start=1
+            if len(hi)>0:
+                start=hi[-1]
+            for j in range(start,operators+1):
+                hij=hi+[j]
+                hw.append(hij)
+        HW=hw
+    return(HW)
+
+def semis(TAB,num_vars):
+    #Returns the semistandard tabs that come from a given standard tableau
+    V=[]
+    maxi=0
+    tab=TAB[0]
+    peak_set=TAB[1]
+    repeat_set=TAB[2]
+    for i in range(len(tab)):
+        for j in range(len(tab[i])):
+            maxi+=len(tab[i][j])
+
+    pars=partitions(maxi,num_vars)
+    SEMI=[]
+    for i in range(0,len(pars)):
+        par=pars[i]
+        weak_seq=[]
+        for j in range(0,len(par)):
+            weak_seq+=[j+1]*par[j]
+        good=True
+        for k in range(0,len(weak_seq)-1):
+            if weak_seq[k]==weak_seq[k+1] and k in repeat_set:
+                good=False
+        for j in range(0,len(weak_seq)-2):
+            if weak_seq[j]==weak_seq[j+1] and weak_seq[j+1]==weak_seq[j+2] and j+1 in peak_set:
+                good=False
+        if good==True:
+            #create list of positions
+            positions=[0]*maxi
+            for r in range(0,len(tab)):
+                for b in range(0,len(tab[r])):
+                    for entry in tab[r][b]:
+                        positions[entry]=[r,b]
+            #create empty semi of tab shape
+            semi=[]
+            for r in range(0,len(tab)):
+                semi.append([])
+                for b in range(0,len(tab[r])):
+                    semi[-1].append([])
+            #put each term in weak_seq in the right spot
+            for p in range(0,maxi):
+                #determine if primed
+                prime=1
+                if p>0:
+                    if weak_seq[p-1]==weak_seq[p]:
+                        if positions[p][0]<=positions[p-1][0]:
+                            prime=0
+                #add entry
+                semi[positions[p][0]][positions[p][1]].append(2*weak_seq[p]-prime)
+            SEMI.append(semi)    
+    
+
+    return(SEMI)
+
+
+def SEMIS(deg,skew,shape,num_vars):
+    P=standard_tabs(deg,skew,shape)
+    Q=[]
+    for p in P:
+        Q+=semis(p,num_vars)
+    return(Q)
+
+def worst(P):
+    #Create a vector worst_counts[i]=the largest counts_i+ghost_i - counts_{i-1} gets
+    counts=[0]*9
+    worst_counts=[0]*9
+    #counts[i] is the is a statistic about the appearances of i and i' as we read the backword and then the forword
+    backword=back(P)
+    forword=forw(P)
+
+    #read through the backword
+    for j in range(0,len(backword)):
+        elem=backword[j]
+        base=math.ceil(elem/2)
+        #while reading the backword add 1 to counts[i] each time you read an i
+        if elem%2==0:
+            counts[base]+=1
+            if base>1 and counts[base]-counts[base-1]>worst_counts[base]:
+                worst_counts[base]=counts[base]-counts[base-1]
+
+        if elem%2==1:
+            if base>1 and counts[base]+1-counts[base-1]>worst_counts[base]:
+                worst_counts[base]=counts[base]+1-counts[base-1] 
+                      
+                
+    #read through the forword
+    for j in range(0,len(forword)):
+        elem=forword[j]
+        base=math.ceil(elem/2)
+        #while reading the forword add 1 to counts[i] each time you read an i'
+        if elem%2==1:
+            counts[base]+=1
+            if base>1 and counts[base]-counts[base-1]>worst_counts[base]:
+                worst_counts[base]=counts[base]-counts[base-1]
+        if elem%2==0:
+            if base>0 and counts[base+1]+1-counts[base]>worst_counts[base+1]:
+                worst_counts[base+1]=counts[base+1]+1-counts[base] 
+                
+    return(worst_counts)
+
+
+def check_plactic(degree,skew,shape,num_vars):
+
+    S=SEMIS(degree,skew,shape,num_vars)
+    X=[]
+    for s in S:
+        X.append(worst(s))
+    XD=distinct_elements(X)
+    print(XD)
+            
+    GR=GR_expand(skew,shape)
+            
+    T=[]
+    for G in GR:
+        for i in range (0,G[0]):
+            T+=(SEMIS(degree,[],G[1],num_vars))
+    Y=[]
+    for t in T:
+        Y.append(worst(t))
+        YD=distinct_elements(Y) 
+    print(YD)       
+    return(XD==YD)
+
+
+    
+            
+check_plactic(9,[3,1],[5,4,2],3)
