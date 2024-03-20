@@ -1,7 +1,7 @@
 # Conjectures-and-Computations
 
 The point of this project is to provide convincing evidence that each of the conjectures covered is "almost certainly"
-true.  Mathematically speaking, a statement only has three possible statuses: proven, disproven, or neither.  In principle, all members of the last category are on equal footing.  For instance, if I conjecture that the number of diagonals of an n-gon is bounded by n, this is on equal footing as the Riemann hypothesis until someone puts forth the 
+true (except for conjecture 7, which is not mine, but seems true).  Mathematically speaking, a statement only has three possible statuses: proven, disproven, or neither.  In principle, all members of the last category are on equal footing.  For instance, if I conjecture that the number of diagonals of an n-gon is bounded by n, this is on equal footing as the Riemann hypothesis until someone puts forth the 
 counterexample of n=6 (or larger).  Intuitively, then, there are obvious differences among the set of all statements that have been neither proven nor disproven at the present time.   For one, if the problem has one or more parameters, we can ask for how many fixed settings of these parameters the conjecture has been checked and how representative of the general setting we think these choices of parameters are. 
 
 As a simple example, suppose that Bob has a conjectural statement that applies to each n in the natural numbers.  Further,
@@ -54,3 +54,11 @@ In the shifted-LR folder <strong>skew-GP-expansion.py</strong> tests a similar b
  T. Ikeda also claims to have a conjecture for these coefficients but he has not shared with me what it is or how rigorously he has checked it.
 
   The function compare(degree,skew,shape,num_vars) returns True if the conjecture is true for the expansion of GQ_{shape/skew} for the given degree and number of variables and False otherwise.  Up to degree 10 or 11 can be checked relatively quickly.
+
+
+  <strong>Conjecture 7: Due to Armstrong (based on work of Johnson): see page 31 of https://arxiv.org/pdf/2403.06318.pdf</strong>
+
+In the qt_Catalan folder <strong>johnson.py</strong>: the function find(a,[Last]) finds the conjectured decompostion for
+B_a(m,n). Note that Last should equal [m,m+1,...,n] and that the outputted lists are in reversed order as the paper.
+Remember also that m-1 and n should be relatively prime to a to work.  poset_decomps lists a sample decomposition
+for each relevant (m,n) when a=5.

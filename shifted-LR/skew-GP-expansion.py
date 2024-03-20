@@ -439,6 +439,3 @@ def compare(degree,skew,shape,num_vars):
 
 
 
-
-
-compare(11,[3,2],[5,4,2,1],4)
