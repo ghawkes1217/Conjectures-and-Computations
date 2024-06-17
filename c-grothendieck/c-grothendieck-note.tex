@@ -1,0 +1,125 @@
+\documentclass[]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage[vcentermath, enableskew]{youngtab}
+\usepackage{tikz}
+\usepackage{mathtools}
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+\usepackage{enumerate}
+
+\usepackage{tikz}
+
+\usepackage{wasysym}
+
+\usepackage{amssymb}
+
+\usepackage{multicol}
+
+\usepackage{amsmath,amscd}
+
+\usepackage{young}
+
+\usepackage{ytableau}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{gray}{0.75}
+
+\newcommand\greybox[1]{%
+  \vskip\baselineskip%
+  \par\noindent\colorbox{lightgray}{%
+    \begin{minipage}{\textwidth}#1\end{minipage}%
+  }%
+  \vskip\baselineskip%
+}
+
+\newtheorem{claim}{Claim}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{conj}{Conjecture}
+\newtheorem{subclaim}{Subclaim}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{computation}{Computation}
+\newtheorem{result}{Result}
+
+
+\theoremstyle{definition}
+\newtheorem{procedure}{Procedure}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\address[G. Hawkes]{Department of Mathematics, Ben Gurion University of the Negev, 1 David Ben Gurion Blvd., %Be'er Sheva, Israel}
+%\keywords{Catalan Numbers, Dyck Paths, Symmetric Polynomials}
+
+
+
+%\thanks{G. Hawkes supported by ISF 711/18}
+%\thanks{\emph{Email address:} \textbf{ghawkes1217@gmail.com}}
+%\thanks{\emph{Address:} Department of Mathematics, Ben Gurion University of the Negev, 1 David Ben Gurion Blvd., %Be'er Sheva, Israel}
+%\email{ghawkes1217@gmail.com}
+
+
+
+
+
+\noindent Expanding $GC_{\omega}$ in terms of $GQ_{\lambda}$.  (contact: ghawkes1217@gmail.com)\\
+
+
+The type $C$ stable Grothendieck polynomial or k-theoretic Stanley symmetric function of type $C$ for a given signed permutation $\omega$ is defined as:
+
+\begin{eqnarray*}
+GC_{\omega}=\sum_{f  \in F_{\omega}} \mathbf{x}^{wt(f)}
+\end{eqnarray*}
+where $F_{\omega}$ is the set of signed factorizations for $\omega$.  A signed factorization $f$, for $\omega$ starts with a word $w$, in the alphabet $\cdots-3<-2<\cdots-1<-0<0<1<\cdots<2<3\cdots$ such that associating $i$ and $-i$ to the simple transposition $s_i$ for $i \neq 0$ and associating $-0$ and $0$ to the special generator of type $C$, $s_0$, the word $w$ forms a Hecke expression for the signed permutation $\omega$. This word is subdivided then into parts where each part must be strictly increasing (under the given order) to form $f$.  The weight of $f$ is the vector whose $i^{th}$ entry records the number of entries in the $i^{th}$ subdivision. 
+
+On the other hand, the $Q$-Grothendieck function is
+\begin{eqnarray*}
+GQ_{\lambda}=\sum_{q \in Q_{\lambda}} \mathbf{x}^{wt(q)}
+\end{eqnarray*}
+ where $Q_{\lambda}$ is the set of semistandard shifted set valued tableaux ($Q$ version, i.e., primes allowed on diiagonal).  The weight of $q$ is the vector whose $i^{th}$ entry records the number of times $i$ or $i'$ appears in $q$.  
+
+
+We claim that we may write:
+
+
+\begin{eqnarray*}
+GC_{\omega}=\sum_{t  \in T_{\omega}} GQ_{shape(t)}
+\end{eqnarray*}
+where $T_{\omega}$ is the set of unimodal Hecke tableaux (defined later) for $\omega$.
+
+It is slightly less computation to verify the stronger statement  that
+
+\begin{eqnarray*}
+GC_{\omega}^{+}=\sum_{t  \in T_{\omega}} GR_{shape(t)}
+\end{eqnarray*}
+where $GC_{\omega}^{+}$ differ from $GC_{\omega}$  by requiring there is a unique number with minimum absolute value in each factor in the definition of a factorization and that this number has a positive sign. $GR_{\lambda}$ differs from $GQ_{\lambda}$ by requiring that the first $i$ or $i'$ (reading left to right, bottom to top) in a shifted semistandard set valued tableau is an $i$ (in particular, the first box with $i$ or $i'$ does not conatin both).  
+
+The latter equation is implied by the existence of a bijection,  $\phi$, from the set of Hecke words of length $n$ for $\omega$ to pairs of tableaux $(t,r)$ where $t$ and $r$ have the same shape, $t \in T_{\omega}$,  and $r$ is a standard shifted set-valued tableau with $n$ entries.  The bijection $\phi$ must have the following additional properties:
+
+
+\begin{enumerate}
+\item If the word $w$ has repeated consecutive entries, that is $w_i=w{i+1}$ then the corresponding recording tableau, $r$ must have $i$ and $i+1$ in the same box (and conversly).  
+\item The word $w$ has a peak at $i$, that is $w_{i-1}<w_{i}>w_{i+1}$ if and only if the corresponding recording tableau has a peak at $i$.  That is $i$ appears in a box to the right of $i-1$ and $i+1$ appears in a box below $i$.
+\end{enumerate}
+
+The weakest version of the conjecture check the existence of $\phi$ (this is what the upcoming paper of Arroyo, Hamaker, H., and Pan will prove).  The next strongest checks that $\phi$ exists and satisfies (1).  The strongest version checks that $\phi$ exists and satisfies (1) and (2).
+\end{document}
